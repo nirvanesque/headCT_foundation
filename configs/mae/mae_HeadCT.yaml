@@ -1,0 +1,59 @@
+MODEL:
+  NAME: vit
+  PRETRAINED: None
+  #PRETRAINED: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved/latest_mae_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42.pt
+  #PRETRAINED: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved/mae_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42.pt
+  DIR: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved
+  SAVE_NAME: mae_test.pt
+  ROI: [96, 96, 96]
+  IN_CHANS: 3
+DATA:
+  BASE_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets
+  TRAIN_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/train_final.csv
+  VAL_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/val_final.csv
+  TEST_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/test_final.csv
+  NUM_WORKERS: 4
+  CACHE_NUM: -1
+  CACHE_RATE: 1.
+  CACHE_DIR: /gpfs/scratch/huangh13/mae3d_cache
+TRAIN:
+  MAX_EPOCHS: 400
+  VAL_EVERY: 20
+  BASE_LR: 1.5e-4
+  MIN_LR: 1.5e-8
+  LOSS: L1
+  PER_WARMUP: 0.05
+  TEMPERATURE: 0.5
+  BETA1: 0.9
+  BETA2: 0.95
+  WEIGHT_DECAY: 0.05
+  GRAD_CLIP: 0.0
+  OPTIMIZER: AdamW
+  SCHEDULER: cosine
+MAE:
+  INPUT_SIZE: 96
+  PATCH_SIZE: 12
+  MASK_RATIO: 0.75
+  IN_CHANS: 3
+  DROPOUT_RATE: 0.
+  PATCH_EMBED: 'conv'
+  POS_EMBED: 'sincos'
+  NORM_LAYER: 'layernorm'
+  SPATIAL_DIMS: 3
+  NORM_PIX_LOSS: False
+  ENCODER_EMBED_DIM: 768
+  ENCODER_DEPTH: 12
+  ENCODER_MLP_DIM: 3072
+  ENCODER_NUM_HEADS: 12
+  DECODER_EMBED_DIM: 768
+  DECODER_DEPTH: 8
+  DECODER_MLP_DIM: 3072
+  DECODER_NUM_HEADS: 16
+  USE_BIAS: True
+WANDB:
+  WANDB_ENABLE: False
+  PROJECT: mae_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42
+LOG:
+  FILENAME: mae_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42
+SEED: 42
+OUTPUT: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/configs/mae/json

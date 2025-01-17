@@ -1,0 +1,61 @@
+MODEL:
+  NAME: vit
+  PRETRAINED: None
+  #PRETRAINED: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved/best_mae_v2_100%_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42.pt
+  #PRETRAINED: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved/best_mae_100%_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42.pt
+  #PRETRAINED: /gpfs/data/razavianlab/data/headCT/DINO_pretrained_checkpoint.pth
+  DIR: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved
+  SAVE_NAME: vit_rsna.pt
+  ROI: [96, 96, 96]
+  IN_CHANS: 3
+DATA:
+  BASE_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets
+  TRAIN_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/rsna_train_label.csv
+  VAL_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/rsna_val_label.csv
+  TEST_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/rsna_test_label.csv
+  CACHE_DIR: /gpfs/scratch/huangh13/rsna_embedding_cache
+  NUM_WORKERS: 4
+  CACHE_NUM: -1
+  CACHE_RATE: 1.0
+  NUM_CLASSES: 2
+TRAIN:
+  MAX_EPOCHS: 15
+  VAL_EVERY: 1
+  BASE_LR: 1.5e-4
+  MIN_LR: 1.5e-8
+  LOSS: L1
+  PER_WARMUP: 0.1
+  TEMPERATURE: 0.5
+  BETA1: 0.9
+  BETA2: 0.999
+  WEIGHT_DECAY: 0.01
+  GRAD_CLIP: 0.0
+  OPTIMIZER: AdamW
+  SCHEDULER: cosine
+  LOCK: False
+  LORA: False
+VIT:
+  INPUT_SIZE: 96
+  PATCH_SIZE: 12
+  IN_CHANS: 3
+  DROPOUT_RATE: 0.
+  PATCH_EMBED: 'conv'
+  POS_EMBED: 'sincos'
+  NORM_LAYER: 'layernorm'
+  SPATIAL_DIMS: 3
+  HIDDEN_SIZE: 768
+  NUM_LAYERS: 12
+  MLP_DIM: 3072
+  NUM_HEADS: 12
+  NUM_REGISTER_TOKENS: 0
+  PATCHES_OVERLAP: 0.2
+  POOLING: 'cls'
+  CLASSIFICATION: False
+  USE_BIAS: True
+WANDB:
+  WANDB_ENABLE: False
+  PROJECT: vit_rsna
+LOG:
+  FILENAME: vit_rsna
+SEED: 42
+OUTPUT: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/configs/vit/json
