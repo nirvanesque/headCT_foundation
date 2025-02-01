@@ -96,10 +96,13 @@ We present our model attention map visualization here across slices of scan for 
 
 <img src="./images/attention_map.png" width="900px"/>
 
+## Scans Filtering Criterion
+We present the filtering criterion in combination of Study Description, Kilovoltage Peak (kVp) and Convolution Types for selecting relevant high quality CT scans on building our foundation model in [**./scans_filter_criterion/scans_filter_criterion.csv**](./scans_filter_criterion/scans_filter_criterion.csv).
+
 ## Citation
 If you find this repository useful, please consider citing this paper:
 ```
-@article{,
-  title={Foundation AI Model for Generalizable Disease Detection in Head Computed Tomography}
+@article{
+  title={3D Foundation AI Model for Generalizable Disease Detection in Head Computed Tomography},
 }
 ```
