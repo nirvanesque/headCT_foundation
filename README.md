@@ -93,7 +93,7 @@ We present comparison among our model, [**Merlin**](https://arxiv.org/abs/2406.0
 <img src="./images/performance1.png" width="900px"/>
 
 #### Linear Probing Comparison ([**Google CT Foundation**](https://github.com/Google-Health/imaging-research/tree/master/ct-foundation) only allow API access) <br>
-<img src="./images/performance2.png" width="900px"/>
+<img src="./images/performance2.png" width="500px" alt="Performance Image" style="display: block; margin-left: 160px;">
 
 ## Attention Map Visualization
 We present our model attention map visualization here across slices of scan for different diseases, where our model can attention to important region of diagnosing diseases.
