@@ -87,9 +87,13 @@ torchrun --nnodes 1 --nproc_per_node 1 --master_port 12400 ../main_pretrain_mae.
 ```
 
 ## Comparisons and Benchmarks
-We present a comparison among our model, [**Merlin**](https://arxiv.org/abs/2406.06512) (a 3D vision-language model pre-trained on large-scale abdominal CT) and model trained from scratch in the Radar Plot, where we show our model outperform others in large margin across majority of diseases. This highlights the importance of our domain specific large-scale pre-training.
+We present comparison among our model, [**Merlin**](https://arxiv.org/abs/2406.06512) (a 3D vision-language foundation model pre-trained on large-scale abdominal CT), [**Google CT Foundation**](https://github.com/Google-Health/imaging-research/tree/master/ct-foundation) (a 3D CT vision foundation model pre-trained on large-scale CT of different anatomy) and model trained from scratch in the radar plots, where we show our model outperforms others across the board. This highlights the success of our training pipeline and importance of our domain specific large-scale pre-training.
 
-<img src="./images/performance.png" width="900px"/>
+#### Fine-Tuning Comparison <br>
+<img src="./images/performance1.png" width="900px"/>
+
+#### Linear Probing Comparison ([**Google CT Foundation**](https://github.com/Google-Health/imaging-research/tree/master/ct-foundation) only allow API access) <br>
+<img src="./images/performance2.png" width="900px"/>
 
 ## Attention Map Visualization
 We present our model attention map visualization here across slices of scan for different diseases, where our model can attention to important region of diagnosing diseases.
