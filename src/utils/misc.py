@@ -95,6 +95,7 @@ def load_model(config, model, momentum_model, logger, model_name="dino"):
     else:
         return None
 
+
 def datafold_read(datalist, basedir, fold=0, key="training"):
     with open(datalist) as f:
         json_data = json.load(f)
