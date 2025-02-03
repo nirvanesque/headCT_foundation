@@ -1,19 +1,16 @@
 MODEL:
   NAME: vit
   PRETRAINED: None
-  #PRETRAINED:  /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved/best_mae_v2_base_100%_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42.pt
-  #PRETRAINED: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved/best_mae_v2_large_100%_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42.pt
-  #PRETRAINED: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved/best_mae_100%_final_lr1.5e-4_mask0.75_sincos_pflash_ep400_adamw_clip3.0_reshape_layernorm_p12_channel3_gpu4_s42.pt
-  DIR: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/model_saved
+  DIR: <path-to>/model_saved
   SAVE_NAME: vit_cq500.pt
   ROI: [96, 96, 96]
   IN_CHANS: 3
 DATA:
-  BASE_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets
-  TRAIN_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/cq500_train_label.csv
-  VAL_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/cq500_val_label.csv
-  TEST_CSV_PATH: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/cq500_test_label.csv
-  CACHE_DIR: /gpfs/scratch/huangh13/cq500_embedding_cache
+  BASE_PATH: <path-to>/datasets
+  TRAIN_CSV_PATH: <path-to>/datasets/cq500_train_label.csv
+  VAL_CSV_PATH: <path-to>/datasets/cq500_val_label.csv
+  TEST_CSV_PATH: <path-to>/datasets/cq500_test_label.csv
+  CACHE_DIR: <path-to>/cq500_cache
   NUM_WORKERS: 4
   CACHE_NUM: -1
   CACHE_RATE: 1.0
@@ -58,4 +55,4 @@ WANDB:
 LOG:
   FILENAME: vit_cq500
 SEED: 42
-OUTPUT: /gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/configs/vit/json
+OUTPUT: <path-to>/configs/vit/json
