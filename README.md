@@ -12,7 +12,7 @@ conda activate head_ct
 2. Clone the repository:
 ```
 git clone https://github.com/NYUMedML/HeadCT-Foundation
-cd HeadCT-Foundation
+cd headCT-Foundation
 ```
 3. Install dependencies:
 ```
@@ -96,17 +96,28 @@ We present comparison among our model, [**Merlin**](https://arxiv.org/abs/2406.0
 <img src="./images/performance2.png" width="500px" alt="Performance Image" style="display: block; margin-left: 160px;">
 
 ## Attention Map Visualization
-We present our model attention map visualization here across slices of scan for different diseases, where our model can attention to important region of diagnosing diseases.
+We present our model attention map visualization here across slices of scan for different diseases, where our model can attend to important region of diagnosing diseases.
 
 <img src="./images/attention_map.png" width="900px"/>
 
 ## Scans Filtering Criterion
 We present the filtering criterion in combination of Study Description, Kilovoltage Peak (kVp) and Convolution Types for selecting relevant high quality CT scans on building our foundation model in [**./scans_filter_criterion/scans_filter_criterion.csv**](./scans_filter_criterion/scans_filter_criterion.csv).
 
+
+## Model Weights Sharing
+Due to the possibility of inferring patient face from headCT data, the model weights are only available upon request after signing institutional agreement. Requests for model weights should be sent to the corresponding author and the NYU Langone Data Sharing Strategy Board (DSSB) Committee (DataSharing@nyulangone.org).
+
 ## Citation
-If you find this repository useful, please consider citing this paper:
+If you find this repository useful and want to see more details, please consider citing and checking our preprint paper:
 ```
-@article{
+@article{zhu2025foundationctmodel,
   title={3D Foundation AI Model for Generalizable Disease Detection in Head Computed Tomography},
+  author={Weicheng Zhu, Haoxu Huang, Huanze Tang, Rushabh Musthyala, Boyang Yu, Long Chen, Emilio Vega, Thomas O' Donnell, Seena Dehkharghani, Jennifer A. Frontera, Arjun V. Masurkar, Kara Melmed, and Narges Razavian}
+  year={2025},
+  eprint={2502.02779},
+  archivePrefix={arXiv},
+  primaryClass={eess.IV},
+  url={https://arxiv.org/abs/2502.02779},
+  note={Weicheng Zhu and Haoxu Huang contributed equally to this work}
 }
 ```
