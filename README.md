@@ -1,4 +1,7 @@
 # HeadCT-Foundation
+[![Paper](https://img.shields.io/badge/Paper-arxiv.2502.02779-FF6B6B.svg)](https://arxiv.org/abs/2502.02779)
+</div>
+
 **Abstract:** Head computed tomography (CT) is a widely-used imaging modality for assessing brain, skull, and cerebrovascular pathologies, particularly in neurologic emergencies due to its speed, safety, and accessibility. However, its limited sensitivity compared to MRI and the scarcity of annotated data hinder the development of robust diagnostic models. To address this, we propose a novel head CT foundation model using self-supervised learning on 361,663 non-contrast 3D head CT scans. Our approach leverages self-supervised learning to pre-train a model that learns generalizable features from unlabeled data, followed by fine-tuning on smaller annotated datasets for tasks like hemorrhage and tumor detection. Evaluated on internal and external datasets, the model demonstrates superior performance on downstream tasks and strong generalization across in- and out-of-distribution data. This work establishes a new benchmark for head CT analysis, highlighting the potential of scaling self-supervised learning in 3D medical imaging.
 
 <img src="./images/overview.png" width="900px"/>
@@ -93,16 +96,15 @@ We present comparison among our model, [**Merlin**](https://arxiv.org/abs/2406.0
 <img src="./images/performance1.png" width="900px"/>
 
 #### Linear Probing Comparison ([**Google CT Foundation**](https://github.com/Google-Health/imaging-research/tree/master/ct-foundation) only allow API access) <br>
-<img src="./images/performance2.png" width="500px" alt="Performance Image" style="display: block; margin-left: 160px;">
+<img src="./images/performance2.png" width="475px" alt="Performance Image" style="display: block; margin-left: 160px;">
 
 ## Attention Map Visualization
 We present our model attention map visualization here across slices of scan for different diseases, where our model can attend to important region of diagnosing diseases.
 
-<img src="./images/attention_map.png" width="900px"/>
+<img src="./images/attention_map.png" width="800px"/>
 
 ## Scans Filtering Criterion
 We present the filtering criterion in combination of Study Description, Kilovoltage Peak (kVp) and Convolution Types for selecting relevant high quality CT scans on building our foundation model in [**./scans_filter_criterion/scans_filter_criterion.csv**](./scans_filter_criterion/scans_filter_criterion.csv).
-
 
 ## Model Weights Sharing
 Due to the possibility of inferring patient face from headCT data, the model weights are only available upon request after signing institutional agreement. Requests for model weights should be sent to the corresponding author and the NYU Langone Data Sharing Strategy Board (DSSB) Committee (DataSharing@nyulangone.org).

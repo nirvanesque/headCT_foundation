@@ -70,7 +70,8 @@ class ViT(nn.Module):
                 when `classification` is True. Default to "Tanh" for `nn.Tanh()`.
                 Set to other values to remove this function.
             qkv_bias (bool, optional): apply bias to the qkv linear layer in self attention block. Defaults to False.
-            save_attn (bool, optional): to make accessible the attention in self attention block. Defaults to False.
+            lora (bool, optional): use LoRA (Learned Relative Attention) in self attention block. Defaults to False.
+            norm_layer (nn.Module, optional): normalization layer. Defaults to nn.LayerNorm.
 
         Examples::
 
@@ -170,3 +171,4 @@ class ViT(nn.Module):
             x = self.classification_head(x[:, 0])
             
         return x, hidden_states_out
+    

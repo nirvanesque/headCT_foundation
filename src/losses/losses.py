@@ -22,7 +22,6 @@ class KLDivergence(nn.Module):
         self.N = 80*96*80
     def forward(self, z_mean, z_log_sigma):
         z_log_var = z_log_sigma * 2
-        #return (1/self.N) * ( (z_mean**2 + z_var**2 - z_log_var**2 - 1).sum() )
         return 0.5 * ((z_mean**2 + z_log_var.exp() - z_log_var - 1).sum())
 
 class L2Loss(nn.Module): 
@@ -66,12 +65,6 @@ class DINOLoss(nn.Module):
         Cross-entropy between softmax outputs of the teacher and student networks.
         """
         student_out = student_output / self.student_temp
-        
-        # if ncrops != None:
-        #     ncrops = ncrops
-        # else:
-        #     ncrops = self.ncrops
-        
         student_out = student_out.chunk(self.ncrops)
 
         # teacher centering and sharpening

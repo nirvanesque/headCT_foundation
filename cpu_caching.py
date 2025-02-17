@@ -48,8 +48,8 @@ args = parser.parse_args()
 device = torch.device("cuda")
 
 roi = [96, 96, 96]
-csv_file = '/gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/datasets/nyu_longisland_all_label.csv'
-cache_dir = '/gpfs/scratch/huangh13/nyu_longisland_embedding_cache'
+csv_file = '<path-to>/datasets/dataset.csv'
+cache_dir = '<path-to>/embedding_cache'
 
 train_ds = HeadDatasetCache(
     roi, 

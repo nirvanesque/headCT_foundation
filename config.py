@@ -13,15 +13,15 @@ _C.BASE = ['']
 # -----------------------------------------------------------------------------
 _C.DATA = CN()
 _C.DATA.BATCH_SIZE = 64  # Batch size for a single GPU
-_C.DATA.BASE_PATH = '/gpfs/data/denizlab/Users/hh2740/HeadCT/datasets'  # Base path for datasets
-_C.DATA.TRAIN_CSV_PATH = '/gpfs/data/denizlab/Users/hh2740/HeadCT/datasets/train.csv'  # Path to training CSV
-_C.DATA.VAL_CSV_PATH = '/gpfs/data/denizlab/Users/hh2740/HeadCT/datasets/val.csv'  # Path to validation CSV
-_C.DATA.TEST_CSV_PATH = '/gpfs/data/denizlab/Users/hh2740/HeadCT/datasets/test.csv'  # Path to test CSV
+_C.DATA.BASE_PATH = '<path-to>/datasets'  # Base path for datasets
+_C.DATA.TRAIN_CSV_PATH = '<path-to>/datasets/train.csv'  # Path to training CSV
+_C.DATA.VAL_CSV_PATH = '<path-to>/datasets/val.csv'  # Path to validation CSV
+_C.DATA.TEST_CSV_PATH = '<path-to>/datasets/test.csv'  # Path to test CSV
 _C.DATA.PIN_MEMORY = True  # Pin memory for DataLoader
 _C.DATA.NUM_WORKERS = 4  # Number of workers for DataLoader
 _C.DATA.CACHE_NUM = -1  # Number of cache items
 _C.DATA.CACHE_RATE = 1.0  # Cache rate
-_C.DATA.CACHE_DIR = '/gpfs/data/razavianlab/data/headCT/cache_dir'  # Cache directory
+_C.DATA.CACHE_DIR = '<path-to>/cache_dir'  # Cache directory
 _C.DATA.DATASET = 'nyu'  # Dataset name
 _C.DATA.FEW_SHOTS = -1  # Number of few shots
 _C.DATA.NUM_CLASSES = 2  # Number of classes
@@ -32,7 +32,7 @@ _C.DATA.NUM_CLASSES = 2  # Number of classes
 _C.MODEL = CN()
 _C.MODEL.NAME = 'mae'  # Model type
 _C.MODEL.PRETRAINED = None  # Pretrained model path
-_C.MODEL.DIR = '/gpfs/data/denizlab/Users/hh2740/HeadCT/model_saved'  # Model save directory
+_C.MODEL.DIR = '<path-to>/model_saved'  # Model save directory
 _C.MODEL.SAVE_NAME = 'debug.pt'  # Model save name
 _C.MODEL.ROI = [96, 96, 96]  # Region of Interest
 _C.MODEL.IN_CHANS = 3  # Input channels
@@ -140,15 +140,15 @@ _C.TRAIN.LABEL_NAME = 'cancer'  # Downstream label name
 # Logging Settings
 # -----------------------------------------------------------------------------
 _C.LOG = CN()
-_C.LOG.OUTPUT_DIR = '/gpfs/data/denizlab/Users/hh2740/git_backups/MedSSL-3D/log'  # Logging directory
-_C.LOG.FILENAME = 'MAE3D_HeadCT'  # Logging file save name
+_C.LOG.OUTPUT_DIR = '<path-to>/headCT_foundation/log'  # Logging directory
+_C.LOG.FILENAME = 'headCT_foundation'  # Logging file save name
 
 # -----------------------------------------------------------------------------
 # wandb Settings
 # -----------------------------------------------------------------------------
 _C.WANDB = CN()
 _C.WANDB.WANDB_ENABLE = False  # Enable wandb
-_C.WANDB.PROJECT = 'MAE3D_HeadCT'  # wandb project name
+_C.WANDB.PROJECT = 'headCT_foundation'  # wandb project name
 
 # -----------------------------------------------------------------------------
 # Misc Settings
