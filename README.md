@@ -106,6 +106,11 @@ We present our model attention map visualization here across slices of scan for 
 ## Scans Filtering Criterion
 We present the filtering criterion in combination of Study Description, Kilovoltage Peak (kVp) and Convolution Types for selecting relevant high quality CT scans on building our foundation model in [**./scans_filter_criterion/scans_filter_criterion.csv**](./scans_filter_criterion/scans_filter_criterion.csv).
 
+
+## Datasets
+Dataset splits with labels for CQ500 and RSNA are organized in their respective directories under [**./datasets**](./datasets), with the root directory removed from the image paths to facilitate reproducing our experimental results.
+
+
 ## Model Weights Sharing
 Due to the possibility of inferring patient face from headCT data, the model weights are only available upon request after signing institutional agreement. Requests for model weights should be sent to the corresponding author and the NYU Langone Data Sharing Strategy Board (DSSB) Committee (DataSharing@nyulangone.org).
 

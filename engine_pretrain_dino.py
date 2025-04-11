@@ -103,7 +103,7 @@ def train_one_epoch(
         with torch.no_grad():
             m = momentum_scheduler[idx]
             _update_momentum_encoder(model.module, momentum_model.module, m)
-          
+            
         torch.cuda.synchronize()
         
         # Reduce and log metrics

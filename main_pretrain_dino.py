@@ -124,7 +124,7 @@ def main(config, wandb_run):
             num_classes=config.DATA.NUM_CLASSES,
             post_activation="Tanh",
             qkv_bias=config.VIT.USE_BIAS,
-        ).to(device)
+        )
         # momentum encoder
         momentum_backbone = ViT(
             img_size=config.VIT.INPUT_SIZE,
@@ -143,7 +143,7 @@ def main(config, wandb_run):
             num_classes=config.DATA.NUM_CLASSES,
             post_activation="Tanh",
             qkv_bias=config.VIT.USE_BIAS,
-        ).to(device)
+        )
         # predictor
         predictor_dino = DINOHead(
             in_dim=config.VIT.HIDDEN_SIZE,
@@ -153,7 +153,7 @@ def main(config, wandb_run):
             nlayers=config.DINO.HEAD_N_LAYERS,
             use_bn=config.DINO.USE_BN,
             norm_last_layer=config.DINO.NORM_LAST_LAYER,
-        ).to(device)
+        )
         # momentum predictor
         momentum_predictor_dino = DINOHead(
             in_dim=config.VIT.HIDDEN_SIZE,
@@ -163,7 +163,7 @@ def main(config, wandb_run):
             nlayers=config.DINO.HEAD_N_LAYERS,
             use_bn=config.DINO.USE_BN,
             norm_last_layer=config.DINO.NORM_LAST_LAYER,
-        ).to(device)
+        )
     else:
         raise ValueError(f"Backbone {config.MODEL.NAME} not supported")
     
