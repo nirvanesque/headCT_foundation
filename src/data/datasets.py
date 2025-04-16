@@ -230,7 +230,7 @@ class FinetuneDataset(Dataset):
                 return item['image'], self.label_dict[fname], fname
         except Exception as e:
             print(f"Error loading index {idx}: {e}")
-            return self.placeholder_dict['image'], 0, fname
+            return self.placeholder_dict['image'], 0, None
 
 
 def get_finetune_dataloaders(config: Any, augs: List[Any]) -> Tuple[data.ThreadDataLoader, data.ThreadDataLoader, data.ThreadDataLoader, Optional[torch.Tensor]]:

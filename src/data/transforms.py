@@ -138,7 +138,7 @@ def loading_transforms(roi: Tuple[int, int, int], in_channels: int) -> transform
     trans = transforms.Compose([
         transforms.LoadImaged(
             keys=["image"],
-            image_only=True,
+            image_only=False,
             allow_missing_keys=True,
         ),
         transforms.EnsureChannelFirstd(

@@ -112,20 +112,20 @@ Dataset splits with labels for CQ500 and RSNA are organized in their respective 
 
 
 ## Model Weights Sharing
-Due to the possibility of inferring patient face from headCT data, the model weights are only available upon request after signing institutional agreement. Requests for model weights should be sent to the corresponding author and the NYU Langone Data Sharing Strategy Board (DSSB) Committee (DataSharing@nyulangone.org).
+Due to the possibility of inferring private patient facial features from Head CT data, we apologize that public release of the model weights is not permitted. The model weights are only available upon request after signing institutional agreement. Requests for model weights should be sent to the corresponding author and the NYU Langone Data Sharing Strategy Board (DSSB) Committee (DataSharing@nyulangone.org).
 
 ## Citation
 If you find this repository useful and want to see more details, please consider citing and checking our preprint paper:
 ```
-@article{zhu2025foundationctmodel,
-  title={3D Foundation AI Model for Generalizable Disease Detection in Head Computed Tomography},
-  author={Weicheng Zhu, Haoxu Huang, Huanze Tang, Rushabh Musthyala, Boyang Yu, Long Chen, Emilio Vega, Thomas O' Donnell, Seena Dehkharghani, Jennifer A. Frontera, Arjun V. Masurkar, Kara Melmed, and Narges Razavian}
-  year={2025},
-  eprint={2502.02779},
-  archivePrefix={arXiv},
-  primaryClass={eess.IV},
-  url={https://arxiv.org/abs/2502.02779},
-  note={Weicheng Zhu and Haoxu Huang contributed equally to this work}
+@article{zhu2025foundationctmodel, 
+    title={3D Foundation AI Model for Generalizable Disease Detection in Head Computed Tomography}, 
+    author={Zhu, Weicheng and Huang, Haoxu and Tang, Huanze and Musthyala, Rushabh and Yu, Boyang and Chen, Long and Vega, Emilio and O'Donnell, Thomas and Dehkharghani, Seena and Frontera, Jennifer A. and Masurkar, Arjun V. and Melmed, Kara and Razavian, Narges}, 
+    year={2025}, 
+    eprint={2502.02779}, 
+    archivePrefix={arXiv}, 
+    primaryClass={eess.IV}, 
+    url={https://arxiv.org/abs/2502.02779},
+    note={Weicheng Zhu and Haoxu Huang contributed equally to this work}
 }
 ```
 <img src="./images/logo.png" width="700px"/>
