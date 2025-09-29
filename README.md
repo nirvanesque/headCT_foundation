@@ -90,13 +90,21 @@ torchrun --nnodes 1 --nproc_per_node 1 --master_port 12400 ../main_pretrain_mae.
 ```
 
 ## Comparisons and Benchmarks
-We present comparison among our model, [**Merlin**](https://arxiv.org/abs/2406.06512) (a 3D vision-language foundation model pre-trained on large-scale abdominal CT), [**Google CT Foundation**](https://github.com/Google-Health/imaging-research/tree/master/ct-foundation) (a 3D CT vision foundation model pre-trained on large-scale CT of different anatomy) and model trained from scratch in the radar plots, where we show our model outperforms others across the board. This highlights the success of our training pipeline and importance of our domain specific large-scale pre-training.
+We present comparison among our model, [**Merlin**](https://arxiv.org/abs/2406.06512) (a 3D vision-language foundation model pre-trained on large-scale abdominal CT), [**Google CT Foundation**](https://github.com/Google-Health/imaging-research/tree/master/ct-foundation) (a 3D CT vision foundation model pre-trained on large-scale CT of different anatomy), [**CT-FM**](https://github.com/project-lighter/CT-FM) and model trained from scratch in the plots on multi-label diseases diagnosis and hemorrhage subtypes volume-to-volume retrieval tasks, where we show our model outperforms others across the board. This highlights the success of our training pipeline and importance of our domain specific large-scale pre-training. We additional show comparison on alternative modeling methods on Attention-Based Multiple-Instance-Learning (AB-MIL) and Mean Pooling with 2D foundation model (DINOv3) and directly using 3D Video Foundation Model (VJEPA2), where we show consistent improved performance on our model.
 
 #### Fine-Tuning Comparison <br>
 <img src="./images/performance1.png" width="900px"/>
 
 #### Linear Probing Comparison ([**Google CT Foundation**](https://github.com/Google-Health/imaging-research/tree/master/ct-foundation) only allow API access) <br>
 <img src="./images/performance2.png" width="475px" alt="Performance Image" style="display: block; margin-left: 160px;">
+
+#### Volume-to-Volume Retrieval Comparison <br>
+<img src="./images/mAP_RSNA_Retrieval.png" width="240px" alt="RSNA Retrieval" style="display:inline-block; margin: 0 10px;" />
+<img src="./images/mAP_CQ500_Retrieval.png" width="310px" alt="CQ500 Retrieval" style="display:inline-block; margin: 0 10px;" />
+
+### Alterntaive Modeling Methods Comparison <br>
+<img src="./images/performance3.png" width="400px" alt="Alterntiave 1" style="display:inline-block; margin: 0 10px;" />
+<img src="./images/performance4.png" width="400px" alt="Alterntiave 2" style="display:inline-block; margin: 0 10px;" />
 
 ## Attention Map Visualization
 We present our model attention map visualization here across slices of scan for different diseases, where our model can attend to important region of diagnosing diseases.
@@ -106,10 +114,8 @@ We present our model attention map visualization here across slices of scan for 
 ## Scans Filtering Criterion
 We present the filtering criterion in combination of Study Description, Kilovoltage Peak (kVp) and Convolution Types for selecting relevant high quality CT scans on building our foundation model in [**./scans_filter_criterion/scans_filter_criterion.csv**](./scans_filter_criterion/scans_filter_criterion.csv).
 
-
 ## Datasets
 Dataset splits with labels for CQ500 and RSNA are organized in their respective directories under [**./datasets**](./datasets), with the root directory removed from the image paths to facilitate reproducing our experimental results.
-
 
 ## Model Weights Sharing
 Due to the possibility of inferring private patient facial features from Head CT data, we apologize that public release of the model weights is not permitted. The model weights are only available upon request after signing institutional agreement. Requests for model weights should be sent to the corresponding author and the NYU Langone Data Sharing Strategy Board (DSSB) Committee (DataSharing@nyulangone.org).
