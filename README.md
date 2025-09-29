@@ -99,12 +99,14 @@ We present comparison among our model, [**Merlin**](https://arxiv.org/abs/2406.0
 <img src="./images/performance2.png" width="475px" alt="Performance Image" style="display: block; margin-left: 160px;">
 
 #### Volume-to-Volume Retrieval Comparison <br>
-<img src="./images/mAP_RSNA_Retrieval.png" width="240px" alt="RSNA Retrieval" style="display:inline-block; margin: 0 10px;" />
-<img src="./images/mAP_CQ500_Retrieval.png" width="310px" alt="CQ500 Retrieval" style="display:inline-block; margin: 0 10px;" />
+<div style="display: flex; justify-content: center; gap: 20px;">
+  <img src="./images/mAP_RSNA_Retrieval.png" width="240px" alt="RSNA Retrieval" />
+  <img src="./images/mAP_CQ500_Retrieval.png" width="310px" alt="CQ500 Retrieval" />
+</div>
 
-### Alterntaive Modeling Methods Comparison <br>
-<img src="./images/performance3.png" width="400px" alt="Alterntiave 1" style="display:inline-block; margin: 0 10px;" />
-<img src="./images/performance4.png" width="400px" alt="Alterntiave 2" style="display:inline-block; margin: 0 10px;" />
+#### Alterntaive Modeling Methods Comparison <br>
+<img src="./images/performance3.png" width="800px" alt="Alterntiave 1" style="display:inline-block; margin: 0 10px;" />
+<img src="./images/performance4.png" width="800px" alt="Alterntiave 2" style="display:inline-block; margin: 0 10px;" />
 
 ## Attention Map Visualization
 We present our model attention map visualization here across slices of scan for different diseases, where our model can attend to important region of diagnosing diseases.
